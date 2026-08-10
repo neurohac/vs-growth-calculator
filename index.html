@@ -103,7 +103,7 @@
     </fieldset>
 
     <fieldset>
-      <legend>Optional <span class="opt">— leave blank if unknown</span></legend>
+      <legend>Optional <span class="opt">leave blank if unknown</span></legend>
       <div class="grid">
         <div>
           <label for="age">Age at baseline, years <span class="opt">(optional)</span></label>
@@ -116,7 +116,7 @@
         </div>
       </div>
       <p class="note">The model was trained with these values missing for some patients and
-         handles absence directly &mdash; nothing is imputed when they are left blank.</p>
+         handles absence directly, so nothing is imputed when they are left blank.</p>
     </fieldset>
 
     <div class="row">
@@ -127,7 +127,7 @@
   </div>
 
   <div id="out" class="card result">
-    <div class="prob" id="pv">—</div>
+    <div class="prob" id="pv">&nbsp;</div>
     <div class="verdict" id="verdict"></div>
     <div class="meter"><i id="bar" style="width:0%"></i></div>
     <div class="mark"><span id="thrMark">threshold</span></div>
@@ -236,7 +236,7 @@ $("go").onclick = () => {
   $("pv").textContent = pct(p);
   $("pv").style.color = above ? "var(--warn)" : "var(--ok)";
   $("verdict").innerHTML = `estimated probability of &ge;${M.growth_threshold_pct}% growth from
-      baseline by the surveillance scan &mdash; <b>${above ? "above" : "below"}</b>
+      baseline by the surveillance scan, <b>${above ? "above" : "below"}</b>
       the study threshold of ${pct(M.threshold)}`;
   $("bar").style.width = (100 * p).toFixed(1) + "%";
   $("bar").style.background = above ? "var(--warn)" : "var(--ok)";
